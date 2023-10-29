@@ -11,3 +11,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# curl -OL https://raw.githubusercontent.com/ruauka/image-downloader-py/tree/main/dist
