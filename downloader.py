@@ -18,7 +18,7 @@ def downloader(path: str):
     # wb = Workbook()
     ws = wb.active
 
-    rows_quant = ws.max_row
+    rows_quant = ws.max_row - 1
     num = 3
 
     if os.path.isdir("images"):
