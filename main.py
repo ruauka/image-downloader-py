@@ -12,4 +12,5 @@ def main():
 if __name__ == '__main__':
     main()
 
-# curl -OL https://raw.githubusercontent.com/ruauka/image-downloader-py/tree/main/dist
+# https://raw.githubusercontent.com/ruauka/image-downloader-py/main/dist/main.exe
+# pyinstaller --onefile .\main.py --name image_downloader
