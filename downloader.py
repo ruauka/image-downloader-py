@@ -1,5 +1,6 @@
 # *- coding: utf-8 -*-
 import os
+from tqdm import tqdm
 import shutil
 import requests
 from openpyxl.reader.excel import load_workbook
@@ -20,11 +21,16 @@ def downloader(path: str):
     rows_quant = ws.max_row
     num = 3
 
-    for i in range(rows_quant):
-        file_path = f"res{i}.jpg"
+    if os.path.isdir("images"):
+        os.rmdir("images")
+
+    os.mkdir("images")
+
+    for i in tqdm(range(rows_quant), desc="гружу картинки"):
+        file_path = f"images/res{i}.jpg"
         URL = ws.cell(row=i + 2, column=3).hyperlink.target
-        print(URL)
-        print(i)
+        # print(URL)
+        # print(i)
         r = requests.get(URL, stream=True)
 
         # print(r.status_code)
@@ -59,5 +65,4 @@ def downloader(path: str):
 
     wb.save(xlsx_path)
 
-    for i in range(num):
-        os.remove(f"res{i}.jpg")
+    os.rmdir("images")
