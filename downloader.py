@@ -20,7 +20,7 @@ def downloader(path: str):
     rows_quant = ws.max_row
     num = 3
 
-    for i in range(num):
+    for i in range(rows_quant):
         file_path = f"res{i}.jpg"
         URL = ws.cell(row=i + 2, column=3).hyperlink.target
         print(URL)
