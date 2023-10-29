@@ -63,6 +63,8 @@ def downloader(path: str):
         cell = f"P{row + 1}"
         ws.add_image(img)
 
+    print("гружу в excel...ждём")
+
     wb.save(xlsx_path)
 
     # os.rmdir("images")
