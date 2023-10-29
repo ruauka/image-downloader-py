@@ -22,11 +22,11 @@ def downloader(path: str):
     num = 3
 
     if os.path.isdir("images"):
-        os.rmdir("images")
+        shutil.rmtree("images")
 
     os.mkdir("images")
 
-    for i in tqdm(range(rows_quant), desc="гружу картинки"):
+    for i in tqdm(range(num), desc="загружаю картинки"):
         file_path = f"images/res{i}.jpg"
         URL = ws.cell(row=i + 2, column=3).hyperlink.target
         # print(URL)
@@ -65,4 +65,5 @@ def downloader(path: str):
 
     wb.save(xlsx_path)
 
-    os.rmdir("images")
+    # os.rmdir("images")
+    shutil.rmtree("images")
