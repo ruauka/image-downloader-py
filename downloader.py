@@ -26,7 +26,7 @@ def downloader(path: str):
 
     os.mkdir("images")
 
-    for i in tqdm(range(num), desc="загружаю картинки"):
+    for i in tqdm(range(rows_quant), desc="загружаю картинки"):
         file_path = f"images/res{i}.jpg"
         URL = ws.cell(row=i + 2, column=3).hyperlink.target
         # print(URL)
